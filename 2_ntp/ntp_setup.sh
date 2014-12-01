@@ -11,3 +11,9 @@ cp ntp.conf /etc/ntp.conf
 # 3. Change hardware clock to LOCAL insted of UTC
 cp adjtime /etc/adjtime
 
+# 4.Setup timezone to Germany
+rm /etc/localtime
+ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+# 5.Start ntp daemon
+/etc/init.d/ntp start
